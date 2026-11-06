@@ -1,21 +1,25 @@
+"use client";
+import { useId } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 export function AndexMarketMark({ className }: { className?: string }) {
+  const uid = useId().replace(/:/g, "");
+  const fill = `amf${uid}`, gloss = `amg${uid}`;
   return (
     <svg viewBox="0 0 40 40" className={cn("h-8 w-8", className)} aria-hidden>
       <defs>
-        <linearGradient id="am-fill" x1="0" y1="0" x2="1" y2="1">
+        <linearGradient id={fill} x1="0" y1="0" x2="1" y2="1">
           <stop offset="0" stopColor="#FFC61F" />
           <stop offset="1" stopColor="#E99400" />
         </linearGradient>
-        <linearGradient id="am-gloss" x1="0" y1="0" x2="0.6" y2="1">
+        <linearGradient id={gloss} x1="0" y1="0" x2="0.6" y2="1">
           <stop offset="0" stopColor="#fff" stopOpacity=".28" />
           <stop offset=".55" stopColor="#fff" stopOpacity="0" />
         </linearGradient>
       </defs>
-      <rect width="40" height="40" rx="9" fill="url(#am-fill)" />
-      <rect width="40" height="40" rx="9" fill="url(#am-gloss)" />
+      <rect width="40" height="40" rx="9" fill={`url(#${fill})`} />
+      <rect width="40" height="40" rx="9" fill={`url(#${gloss})`} />
       <path d="M6.6 27.2 L22.4 11.2 L33.6 22.2" fill="none" stroke="#fff" strokeWidth="5" strokeLinecap="butt" strokeLinejoin="miter" />
     </svg>
   );

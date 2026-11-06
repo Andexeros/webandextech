@@ -5,8 +5,7 @@ const items = [
   { quote: "Andex Tech nos brindó una atención personalizada que logró adaptarse de inmediato a las particularidades de nuestra clínica. Su servicio postventa es excelente, es ágil y confiable, lo que hizo de la integración un éxito.", name: "Dr. Juan Ignacio Luffi", title: "Veterinaria Dr. Luffi" },
   { quote: "Trabajan con profesionalismo, responsabilidad y calidad humana, lo que se refleja en la dedicación que le ponen a cada proyecto.", name: "Ignacio Montoro", title: "Dueño de Modestan" },
   { quote: "Tuve el privilegio de acompañar a los fundadores de Andex Tech en su gestación, donde construyeron una empresa basada en valores y profesionalismo. Se destaca por su compromiso con la excelencia, la innovación y la satisfacción del cliente.", name: "Juan Pablo Bustos", title: "Profesor de la UNCUYO" },
-  { quote: "La implementación fue rápida y el soporte técnico es excelente.", name: "Carlos Rodríguez", title: "Dueño de local" },
-  { quote: "La solución se adaptó perfectamente a nuestras necesidades específicas.", name: "Laura Martínez", title: "Administradora" },
+  { quote: "El sistema resolvió todo lo pedido. Es intuitivo y rápido de aprender, algo que no nos pasó con ningún otro sistema, y da facilidad para acceder a todo. Atención de calidad, sobre todo la parte humana del soporte con nosotros.", name: "Nicolás Gómez", title: "Estancia Almacén de Carnes" },
 ];
 
 function Card({ t }: { t: (typeof items)[number] }) {

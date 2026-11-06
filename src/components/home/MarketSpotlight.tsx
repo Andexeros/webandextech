@@ -16,8 +16,8 @@ export function MarketSpotlight() {
     <section className="relative py-24 md:py-32">
       <div className="pointer-events-none absolute left-0 top-1/3 -z-10 h-[500px] w-[600px] rounded-full bg-gold-500/[0.07] blur-[120px]" />
       <div className="container">
-        <div className="grid items-center gap-14 lg:grid-cols-[1fr_1.05fr]">
-          <div>
+        <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-[1fr_1.05fr]">
+          <div className="min-w-0">
             <Reveal><span className="eyebrow">Producto principal</span></Reveal>
             <Reveal delay={0.05}><div className="mt-6"><AndexMarketWordmark size="lg" /></div></Reveal>
             <Reveal delay={0.1}>
@@ -51,7 +51,7 @@ export function MarketSpotlight() {
               </div>
             </Reveal>
           </div>
-          <div className="relative">
+          <div className="relative min-w-0">
             <Reveal><AidaDemo /></Reveal>
           </div>
         </div>

@@ -60,12 +60,12 @@ export function HomeHero() {
 
 function RotatingWord() {
   const [i, setI] = useState(0);
-  useEffect(() => { const t = setInterval(() => setI((v) => (v + 1) % words.length), 2600); return () => clearInterval(t); }, []);
+  useEffect(() => { const t = setInterval(() => setI((v) => (v + 1) % words.length), 4800); return () => clearInterval(t); }, []);
   return (
     <AnimatePresence mode="wait">
       <motion.span key={words[i]} className="text-gradient inline-block"
         initial={{ opacity: 0, y: 20, filter: "blur(8px)" }} animate={{ opacity: 1, y: 0, filter: "blur(0px)" }} exit={{ opacity: 0, y: -20, filter: "blur(8px)" }}
-        transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}>
+        transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}>
         {words[i]}
       </motion.span>
     </AnimatePresence>
