@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body { @apply bg-ink-950 text-neutral-200 antialiased; font-feature-settings: "ss01", "cv11"; }
+::selection { background: rgba(233,176,0,.35); color: #fff; }
+
+@layer components {
+  .eyebrow { @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs font-medium tracking-wide text-neutral-300 backdrop-blur; }
+  .h-display { @apply text-balance font-semibold tracking-[-0.035em] text-white; }
+  .text-gradient { @apply bg-gradient-to-r from-gold-300 via-gold-400 to-gold-600 bg-clip-text text-transparent; }
+  .text-gradient-deep { @apply bg-gradient-to-r from-gold-600 via-amber-600 to-amber-700 bg-clip-text text-transparent; }
+  .eyebrow-light { @apply inline-flex items-center gap-2 rounded-full border border-ink-900/10 bg-white/70 px-3 py-1 text-xs font-medium tracking-wide text-ink-700; }
+  .card-light { @apply rounded-3xl border border-ink-900/[0.07] bg-white shadow-[0_1px_2px_rgba(14,19,26,.04),0_12px_32px_-16px_rgba(14,19,26,.18)]; }
+  .surface-cream { @apply relative mx-2 rounded-[2rem] bg-cream text-ink-800 md:mx-4 md:rounded-[2.75rem]; }
+  .btn-dark { @apply btn bg-ink-900 text-white hover:bg-ink-700; }
+  .card { @apply rounded-3xl border border-white/[0.08] bg-gradient-to-b from-white/[0.05] to-white/[0.015]; }
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-semibold transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-400/70; }
+  .btn-primary { @apply btn bg-gold-400 text-ink-950 shadow-[0_0_0_1px_rgba(255,215,102,.4),0_10px_40px_-10px_rgba(245,194,27,.6)] hover:bg-gold-300 hover:shadow-[0_0_0_1px_rgba(255,215,102,.6),0_16px_50px_-10px_rgba(245,194,27,.8)]; }
+  .btn-ghost { @apply btn border border-white/15 bg-white/[0.03] text-white hover:border-white/30 hover:bg-white/[0.07]; }
+}
+
+.bg-grid {
+  background-image: linear-gradient(to right, rgba(255,255,255,.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,.045) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+.mask-radial { mask-image: radial-gradient(ellipse 70% 60% at 50% 30%, #000 40%, transparent 100%); }
+.mask-fade-x { mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent); }
+.noise::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .05; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { scrollbar-width: none; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+}
